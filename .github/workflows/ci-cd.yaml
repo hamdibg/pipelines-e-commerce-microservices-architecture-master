@@ -18,6 +18,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 17
+      - name: Make mvnw executable
+        run: chmod +x ./mvnw
       - name: Build & Test api-gateway
         run: ./mvnw clean package -DskipTests=false -pl api-gateway -am
       - uses: docker/setup-buildx-action@v3
@@ -42,6 +44,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 17
+      - name: Make mvnw executable
+        run: chmod +x ./mvnw
       - name: Build & Test order
         run: ./mvnw clean package -DskipTests=false -pl order -am
       - uses: docker/setup-buildx-action@v3
@@ -66,6 +70,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 17
+      - name: Make mvnw executable
+        run: chmod +x ./mvnw
       - name: Build & Test payment
         run: ./mvnw clean package -DskipTests=false -pl payment -am
       - uses: docker/setup-buildx-action@v3
@@ -90,6 +96,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 17
+      - name: Make mvnw executable
+        run: chmod +x ./mvnw
       - name: Build & Test products
         run: ./mvnw clean package -DskipTests=false -pl products -am
       - uses: docker/setup-buildx-action@v3
@@ -114,6 +122,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 17
+      - name: Make mvnw executable
+        run: chmod +x ./mvnw
       - name: Build & Test users
         run: ./mvnw clean package -DskipTests=false -pl users -am
       - uses: docker/setup-buildx-action@v3
@@ -138,6 +148,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 17
+      - name: Make mvnw executable
+        run: chmod +x ./mvnw
       - name: Build & Test config-server
         run: ./mvnw clean package -DskipTests=false -pl config-server -am
       - uses: docker/setup-buildx-action@v3
@@ -162,6 +174,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 17
+      - name: Make mvnw executable
+        run: chmod +x ./mvnw
       - name: Build & Test eureka-server
         run: ./mvnw clean package -DskipTests=false -pl eureka-server -am
       - uses: docker/setup-buildx-action@v3
