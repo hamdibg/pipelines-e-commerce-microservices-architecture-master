@@ -1,0 +1,27 @@
+server:
+  port: 8097
+spring:
+  application:
+    name: orders
+  datasource:
+    password: password
+    url: jdbc:postgresql://localhost:5432/users
+    username: shopify
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+  zipkin:
+    base-url: http://localhost:9411
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+
