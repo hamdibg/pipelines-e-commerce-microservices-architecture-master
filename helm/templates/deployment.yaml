@@ -1,0 +1,22 @@
+{{- range $svc, $conf := .Values }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $svc | lower }}
+spec:
+  replicas: {{ $conf.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ $svc | lower }}
+  template:
+    metadata:
+      labels:
+        app: {{ $svc | lower }}
+    spec:
+      containers:
+        - name: {{ $svc | lower }}
+          image: {{ $conf.image }}
+          ports:
+            - containerPort: {{ $conf.port }}
+{{- end }}
